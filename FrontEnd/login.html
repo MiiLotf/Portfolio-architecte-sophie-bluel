@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Connexion - Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+<!-- Formulaire de connexion -->
+<section id="login">
+    <h2>Connexion</h2>
+    <form id="login-form">
+        <label for="username">Identifiant</label>
+        <input type="text" id="username" name="username" required placeholder="Entrez votre identifiant">
+        
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe">
+        
+        <button type="submit">Se connecter</button>
+    </form>
+    <p id="error-message" style="color: red; text-align: center; display: none;">Erreur dans l'identifiant ou le mot de passe</p>
+</section>
+<!-- Liens vers le fichier JavaScript -->
+<script src="login.js"></script>
+</body>
+</html>
