@@ -3,17 +3,15 @@ const form = document.getElementById('login-form');
 const errorMessage = document.getElementById('error-message');
 
 // Fonction pour envoyer les données de connexion à l'API
-async function authenticateUser(username, password) {
+async function authenticateUser(identifiants) {
     try {
+        const chargeUtile =JSON.stringify(identifiants)
         await fetch('http://localhost:5678/api/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                username: username,
-                password: password,
-            })
+            body: chargeUtile
         })
         .then(response => {
             if (!response.ok) {
@@ -23,7 +21,7 @@ async function authenticateUser(username, password) {
         })
         .then(data => {
             console.log(data)
-            sessionStorage.setItem('user', username); // garder en mémoire l'user
+            sessionStorage.setItem('user', identifiants.email); // garder en mémoire l'user
             sessionStorage.setItem('isUser', 'true'); // permet de se connecter
 
 
@@ -46,10 +44,13 @@ form.addEventListener('submit', function(event) {
     event.preventDefault(); // Empêcher le rechargement de la page lors de la soumission
 
     // Récupérer les valeurs des champs du formulaire
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const identifiants = {
+        email: event.target.querySelector("[name=username]").value,
+        password: event.target.querySelector("[name=password]").value
 
-authenticateUser(username, password)
+    }
+
+authenticateUser(identifiants)
 
 });
 

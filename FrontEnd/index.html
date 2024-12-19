@@ -65,6 +65,44 @@
 		</ul>
 	</nav>
 </footer>
+
+<div class="modal-overlay" id="modalOverlay">
+	<div class="modal" role="dialog">
+		<div class="modal-header">
+			<h2>Galerie photo</h2>
+			<button class="close-modal">&times;</button>
+		</div>
+		<div class="modal-content" id="modalContent">
+			<!-- Vue Galerie photo -->
+			<div id="gallery-view">
+				<!-- Le contenu de la galerie sera injecté ici dynamiquement -->
+			</div>
+
+			<!-- Vue Ajout photo -->
+			<div id="add-photo-view" style="display: none;">
+				<h3>Ajouter une photo</h3>
+				<form id="add-project-form">
+					<label for="project-title">Titre</label>
+					<input type="text" id="project-title" name="title" required>
+					
+					<label for="project-category">Catégorie</label>
+					<select id="project-category" name="category" required>
+						<!-- Les options seront ajoutées dynamiquement -->
+					</select>
+					
+					<label for="project-image">Image</label>
+					<input type="file" id="project-image" name="image" accept="image/*" required>
+					
+					<button type="submit">Valider</button>
+				</form>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button id="addPhotoBtn">Ajouter une photo</button>
+		</div>
+	</div>
+</div>
+
 <!-- Liens vers le fichier JavaScript -->
 <script src="app.js"></script>
 </body>
