@@ -228,6 +228,12 @@ footer nav ul {
 	gap: 10px;
 	margin: 20px 0;
   }
+
+  .modal-content img {
+    width: 100%;
+    height: auto;  /* Maintient le ratio d'origine des images */
+    object-fit: cover;  /* Remplit la zone sans déformer l'image */
+}
   
   .modal-footer {
 	text-align: center;
